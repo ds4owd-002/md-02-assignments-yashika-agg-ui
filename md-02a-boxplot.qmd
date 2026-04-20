@@ -1,6 +1,6 @@
 ---
 title: "Make a Plot"
-author: "Your Name Here"
+author: "Yashika Aggarwal"
 format:
   html:
     embed-resources: true
@@ -40,7 +40,7 @@ gapminder |>
 
 4.  Write in your own words what you think this code does:
 
-*Your answer here:*
+*Your answer here: It have an already available dataset, a pipe operator assigning values from dataset and filter (year == 2007) represents all the rows where the data is having year 2007*
 
 5.  Now run the code chunk below that assigns the result to an object.
 
@@ -53,7 +53,7 @@ gapminder_2007 <- gapminder |>
 
 7.  Click on `gapminder_2007` in the Environment tab to view the data. What do you notice about this dataset compared to the original `gapminder` dataset?
 
-*Your answer here:*
+*Your answer here: It have fewer rows then the original gapminder data and all are representing data from year 2007*
 
 ## Task 3: Summarize data for life expectancy by continent
 
@@ -76,7 +76,7 @@ gapminder_2007 |>
 
 4.  Write in your own words what you think this code does:
 
-*Your answer here:*
+*Your answer here: It* groups the 2007 data by continent and calculates the number of countries and median life expectancy for each continent.
 
 5.  Now run the code chunk below that assigns the result to an object.
 
@@ -93,7 +93,7 @@ gapminder_summary_2007 <- gapminder_2007 |>
 
 7.  Look at the `gapminder_summary_2007` object in the Environment tab. How many rows and columns does it have? Why is this different from `gapminder_2007`?
 
-*Your answer here:*
+*Your answer here: It have 5 rows and 3 columns and it differ from the* `gapminder_2007` data as it shows life expenctancy data according to continents only and group countries together for year 2007 contrary to `gapminder_2007` data which shows a file on life expectancy according to countries in 2007.
 
 ## Task 4: Summarize data for life expectancy by continent and year
 
@@ -113,7 +113,7 @@ gapminder |>
 
 4.  Write in your own words what you think this code does:
 
-*Your answer here:*
+*Your answer here: The code groups the data by continent and year and then calculates the median life expectancy of each continent in each year.*
 
 5.  Now run the code chunk below that assigns the result to an object.\$
 
@@ -127,7 +127,7 @@ gapminder_summary_continent_year <- gapminder |>
 
 7.  Compare this result with Task 3. What's different about grouping by two variables instead of one? How does this affect the output?
 
-*Your answer here:*
+*Your answer here: The grouping by two variables (continent and year) gives a more detailed table with one row for each continent and year combination, instead of just one row per continent*.
 
 ## Task 5: Create your first plot
 
@@ -146,7 +146,7 @@ ggplot(data = gapminder_2007,
 
 3.  Write in your own words what this plot shows:
 
-*Your answer here:*
+*Your answer here: The plot shows the distribution of life expectancy in 2007 for each continent, allowing you to compare median values, and variation across continents*.
 
 ## Task 6: Data communication
 
