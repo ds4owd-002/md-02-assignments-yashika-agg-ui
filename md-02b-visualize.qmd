@@ -1,6 +1,6 @@
 ---
 title: "Visualize"
-author: ""
+author: "Yashika Aggarwal"
 format:
   html:
     embed-resources: true
@@ -67,6 +67,10 @@ Write code to create a boxplot showing life expectancy by continent.
 5.  Run the code and verify you see 5 boxes.
 
 ```{r}
+ggplot(
+  data = gapminder_2007,
+  mapping = aes(x = continent, y = lifeExp)) +
+  geom_boxplot()
 
 ```
 
@@ -91,7 +95,10 @@ Write code to create a timeseries plot showing how median life expectancy change
 6.  Run the code and verify you see 5 colored lines with points showing trends over time.
 
 ```{r}
-
+ggplot(data = gapminder_summary_continent_year, mapping = aes(x = year, y = lifeExp, color = continent)) +
+  geom_line() +
+  geom_point()
+  
 ```
 
 ## Task 5: Create a barplot
@@ -114,7 +121,8 @@ Write code to create a barplot showing the number of countries per continent.
 5.  Run the code and verify you see 5 bars showing counts per continent.
 
 ```{r}
-
+ggplot(data = gapminder_summary_2007,
+       mapping = aes(x = continent, y = count)) +geom_col()
 ```
 
 ### with `geom_bar()`
@@ -138,6 +146,9 @@ Write code to create the same barplot but using `geom_bar()` instead.
 *Your answer here:*
 
 ```{r}
+ggplot(data = gapminder_2007,
+       mapping = aes(x = continent)) +
+  geom_bar()
 
 ```
 
@@ -165,10 +176,12 @@ Write code to create a histogram showing the distribution of life expectancy col
 
 7.  Experiment: Change the numbers in `seq()` and describe what happens:
 
-*Your answer here:*
+*Your answer here: It will change the bin width and might affect the data visualization*
 
 ```{r}
-
+ggplot(data = gapminder_2007, 
+       mapping = aes(x = lifeExp, fill = continent)) +
+  geom_histogram(col = "grey30", breaks = seq(30, 65, 6))
 ```
 
 ## Task 7: Scatterplot and faceting
@@ -197,7 +210,15 @@ Write code to create a scatterplot showing the relationship between GDP per capi
 8.  Run the code and verify you see 5 panels with scatterplots, one for each continent.
 
 ```{r}
-
+ggplot(data = gapminder_2007, mapping = aes(
+  x = gdpPercap,
+  y = lifeExp,
+  size = pop,
+  color = country
+)) +
+  geom_point(show.legend = FALSE) +
+  facet_wrap(~continent)
+  
 ```
 
 ## Task 8: Data communication
